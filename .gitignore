@@ -1,0 +1,145 @@
+# ============================================================
+# .gitignore — Repo PÚBLICO (tcc-llm-restaurantes-avaliacao)
+# Sem dados s / corpus bruto
+# ============================================================
+
+# ---------- Segredos ----------
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+config_secrets.py
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+env/
+ENV/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# ---------- IDE / OS ----------
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------- LaTeX build artifacts ----------
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+
+# ============================================================
+# DADOS — exclusões específicas deste repo público
+# ============================================================
+
+# Corpus de Origem (comentários reais — risco LGPD)
+tcc_coding_files/data/expanded/
+
+# Corpus Resultante (2.400 respostas geradas pelas LLMs)
+tcc_coding_files/data/generated_responses/
+
+# Avaliações com texto completo das respostas (vão pro repo privado)
+tcc_coding_files/data/human_evaluation_consolidated.csv
+tcc_coding_files/data/human_evaluation_per_evaluator/
+tcc_coding_files/data/avaliacoes_excel_v3/
+tcc_coding_files/data/avaliacoes_to_fillout/
+tcc_coding_files/data/avaliacoes_llm_judge_v3/
+
+# Métricas com coluna de resposta completa
+tcc_coding_files/results/**/*_detailed.csv
+tcc_coding_files/results/**/wassa_input*.csv
+tcc_coding_files/results/perceived_empathy/annotated_evaluations.csv
+tcc_coding_files/results/perceived_empathy/empathy_evaluations.csv
+
+# Pipeline de GERAÇÃO (usa API keys, vai pro repo privado)
+tcc_coding_files/llm/
+tcc_coding_files/execute.py
+tcc_coding_files/config.py
+tcc_coding_files/__init__.py
+
+# Prompts proprietários (decisão sua — se quiser publicar, REMOVA estas 4 linhas)
+# tcc_coding_files/prompts/
+
+# ============================================================
+# NARRATIVA ANTIGA — já DELETADA da árvore (Fase 2 da limpeza)
+# Estas linhas existem como salvaguarda caso alguém recrie por engano
+# ============================================================
+
+tcc_coding_files/_legacy_outdated/
+tcc_coding_files/docs/analise_completa_metricas_v3.md
+tcc_coding_files/docs/analise_estratificada_completa.md
+tcc_coding_files/docs/meta_analise_estratificada.md
+tcc_coding_files/docs/relatorio_empatia_percebida.md
+tcc_coding_files/docs/relatorio_empatia_percebida_wassa.md
+tcc_coding_files/docs/relatorio_adequacao_de_tom.md
+tcc_coding_files/docs/relatorio_consistencia_de_marca.md
+tcc_coding_files/docs/relatorio_fluencia.md
+
+# Pipelines antigos (já removidos fisicamente)
+tcc_coding_files/tcc2/algorithms/*/old/
+
+# Código herdado do TCC1 (já removido fisicamente)
+tcc_coding_files/tcc1/
+
+# Métricas legacy (ROUGE/BERTScore, não usadas no TCC final — já removidas)
+tcc_coding_files/results/legacy/
+tcc_coding_files/results/politeness_score/
+
+# LLM-as-judge não foi usado no TCC final (já removido)
+tcc_coding_files/data/avaliacoes_llm_judge_v3/
+tcc_coding_files/data/avaliacoes_to_fillout/
+
+# ============================================================
+# MODELOS / CACHES (regenerável, grande)
+# ============================================================
+
+tcc_coding_files/tcc2/algorithms/fluencia/model_cache/
+**/snapshots/
+**/transformers_cache/
+**/.cache/
+
+# ============================================================
+# MATERIAIS PRIVADOS / LOCAIS
+# ============================================================
+
+# Pastas exclusivas do autor / orientador
+TCC_1/
+TCC_2/
+
+# Notas pessoais / scratch
+prompts_delegacao.md
+imagens modelos att/
+tcc_img_assets/
+Métricas.xlsx
+docs/Métricas.xlsx
+
+# Backup criado durante limpeza
+_xlsx_backup_pre_cleanup/
+
+# Arquivos temporários de rendering
+tmp_form_p*.png
+tmp_*.png
