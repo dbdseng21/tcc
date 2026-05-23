@@ -56,7 +56,7 @@ plt.rcParams.update({
 # ------------------------------------------------------------
 COLORS = {"GPT-5.5": "#2E86AB", "Gemini 3.1 Pro": "#A23B72", "Llama 4": "#F18F01"}
 MODEL_ORDER = ["GPT-5.5", "Gemini 3.1 Pro", "Llama 4"]
-MODEL_MAP = {"gpt4": "GPT-5.5", "gemini": "Gemini 3.1 Pro", "llama3": "Llama 4"}
+MODEL_MAP = {"gpt5": "GPT-5.5", "gemini": "Gemini 3.1 Pro", "llama4": "Llama 4"}
 
 # ------------------------------------------------------------
 # Carga de dados (mesma do script original)

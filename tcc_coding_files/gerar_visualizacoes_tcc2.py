@@ -39,7 +39,7 @@ plt.rcParams.update({
 # Color palette
 COLORS = {'GPT-5.5': '#2E86AB', 'Gemini 3.1 Pro': '#A23B72', 'Llama 4': '#F18F01'}
 MODEL_ORDER = ['GPT-5.5', 'Gemini 3.1 Pro', 'Llama 4']
-MODEL_MAP = {'gpt4': 'GPT-5.5', 'gemini': 'Gemini 3.1 Pro', 'llama3': 'Llama 4'}
+MODEL_MAP = {'gpt5': 'GPT-5.5', 'gemini': 'Gemini 3.1 Pro', 'llama4': 'Llama 4'}
 
 # ============================================================
 # Load data
@@ -179,7 +179,7 @@ def minmax(val, vmin, vmax):
 
 radar_data = {}
 for m in MODEL_ORDER:
-    mk = {'GPT-5.5':'gpt4','Gemini 3.1 Pro':'gemini','Llama 4':'llama3'}[m]
+    mk = {'GPT-5.5':'gpt5','Gemini 3.1 Pro':'gemini','Llama 4':'llama4'}[m]
     emp_h = human_means.loc[m, 'empatia']
     tom_h = human_means.loc[m, 'adequacao_de_tom']
     con_h = human_means.loc[m, 'consistencia_de_marca']

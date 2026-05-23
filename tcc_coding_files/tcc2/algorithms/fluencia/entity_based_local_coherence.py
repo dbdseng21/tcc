@@ -120,11 +120,11 @@ def infer_metadata_from_generated_filename(filename: str) -> Dict[str, str]:
 def infer_model_from_response_column(colname: str) -> str:
     lower = colname.lower()
     if "gpt" in lower:
-        return "gpt4"
+        return "gpt5"
     if "gemini" in lower:
         return "gemini"
     if "llama" in lower:
-        return "llama3"
+        return "llama4"
     return "unknown"
 
 

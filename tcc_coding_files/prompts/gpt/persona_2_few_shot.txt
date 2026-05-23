@@ -1,7 +1,7 @@
 Você receberá um arquivo CSV com 100 comentários de clientes do restaurante Coco Bambu Manaus.
 
 Sua tarefa é gerar uma resposta para CADA comentário e preencher APENAS a coluna:
-"Gpt4 Generated Response Persona acolhedora e informal"
+"Gpt5 Generated Response Persona acolhedora e informal"
 
 Definição da persona:
 Persona acolhedora e informal: Amigável, próxima, calorosa e descontraída. Trata o cliente de forma leve e acessível, como quem conversa com um amigo.
@@ -20,7 +20,7 @@ Gerar respostas em português do Brasil, naturais, empáticas, coerentes com a p
 Instruções obrigatórias:
 1. Leia o conteúdo da coluna "comment" de cada linha.
 2. Gere exatamente 1 resposta para cada comentário.
-3. Preencha somente a coluna "Gpt4 Generated Response Persona acolhedora e informal".
+3. Preencha somente a coluna "Gpt5 Generated Response Persona acolhedora e informal".
 4. Preserve integralmente todas as demais colunas, valores, ordem das linhas e estrutura do CSV.
 5. Não crie nem remova colunas.
 6. Não altere comentários, datas, URLs, restaurante ou respostas já existentes em outras colunas.

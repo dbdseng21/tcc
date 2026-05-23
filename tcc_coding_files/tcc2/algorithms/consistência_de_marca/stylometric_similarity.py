@@ -285,9 +285,9 @@ if __name__ == "__main__":
     # Respostas geradas (um cenário específico)
     gen = pd.read_csv("generated_comments/after_llm_release_comments_generated_responses_persona_1_zero_shot.csv")
 
-    gpt_col = "Gpt4 Generated Response Persona sofisticada e formal"
+    gpt_col = "Gpt5 Generated Response Persona sofisticada e formal"
     gem_col = "Gemini Generated Response Persona sofisticada e formal"
-    lla_col = "Llama3 Generated Response Persona sofisticada e formal"
+    lla_col = "Llama4 Generated Response Persona sofisticada e formal"
 
     score_fn = build_writeprints_profile(
         ref,
@@ -303,11 +303,11 @@ if __name__ == "__main__":
     lla_sims, lla_dist = score_fn(gen[lla_col], return_distance=True)
 
     print("=== Similarity (maior = mais no estilo) ===")
-    print("GPT-4 mean:", float(np.mean(gpt_sims)))
+    print("GPT-5.5 mean:", float(np.mean(gpt_sims)))
     print("Gemini mean:", float(np.mean(gem_sims)))
-    print("Llama3 mean:", float(np.mean(lla_sims)))
+    print("Llama 4 mean:", float(np.mean(lla_sims)))
 
     print("\n=== Distance = 1 - similarity (menor = mais no estilo) ===")
-    print("GPT-4 mean dist:", float(np.mean(gpt_dist)))
+    print("GPT-5.5 mean dist:", float(np.mean(gpt_dist)))
     print("Gemini mean dist:", float(np.mean(gem_dist)))
-    print("Llama3 mean dist:", float(np.mean(lla_dist)))
+    print("Llama 4 mean dist:", float(np.mean(lla_dist)))

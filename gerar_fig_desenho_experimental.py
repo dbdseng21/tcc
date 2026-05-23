@@ -1,10 +1,10 @@
 """
 Generate fig_desenho_experimental.png — Desenho Experimental para Avaliação de LLMs.
 
-Updates from previous version:
-  Box 1 (Coleta de Dados): "Google Reviews" -> "Coco Bambu (Manaus)"
-  Box 3 (Modelos Avaliados): GPT-4 -> GPT 5.5, Gemini -> Gemini 3.1, Llama 3 -> Llama 4
-  Arrows: redesenhadas com roteamento ortogonal (sem cruzar caixas);
+Layout:
+  Box 1 (Coleta de Dados): "Coco Bambu (Manaus)"
+  Box 3 (Modelos Avaliados): GPT-5.5, Gemini 3.1, Llama 4
+  Arrows: roteamento ortogonal (sem cruzar caixas);
           origem e destino claramente identificados.
 """
 from pathlib import Path as FsPath
