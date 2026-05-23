@@ -37,9 +37,9 @@ plt.rcParams.update({
 })
 
 # Color palette
-COLORS = {'GPT-4': '#2E86AB', 'Gemini 1.5 Pro': '#A23B72', 'Llama 3 8B': '#F18F01'}
-MODEL_ORDER = ['GPT-4', 'Gemini 1.5 Pro', 'Llama 3 8B']
-MODEL_MAP = {'gpt4': 'GPT-4', 'gemini': 'Gemini 1.5 Pro', 'llama3': 'Llama 3 8B'}
+COLORS = {'GPT-5.5': '#2E86AB', 'Gemini 3.1 Pro': '#A23B72', 'Llama 4': '#F18F01'}
+MODEL_ORDER = ['GPT-5.5', 'Gemini 3.1 Pro', 'Llama 4']
+MODEL_MAP = {'gpt4': 'GPT-5.5', 'gemini': 'Gemini 3.1 Pro', 'llama3': 'Llama 4'}
 
 # ============================================================
 # Load data
@@ -49,9 +49,9 @@ human_df['model_label'] = human_df['model'].map(MODEL_MAP)
 
 # Automatic metrics (aggregated from user-provided verified data)
 auto_metrics = {
-    'GPT-4':          {'PPL': 118.3, 'TQS': 0.544, 'WASSA': 3.360, 'Stylometric': 0.061},
-    'Gemini 1.5 Pro': {'PPL': 179.5, 'TQS': 0.513, 'WASSA': 3.113, 'Stylometric': 0.070},
-    'Llama 3 8B':     {'PPL': 229.4, 'TQS': 0.582, 'WASSA': 3.280, 'Stylometric': 0.052},
+    'GPT-5.5':          {'PPL': 118.3, 'TQS': 0.544, 'WASSA': 3.360, 'Stylometric': 0.061},
+    'Gemini 3.1 Pro': {'PPL': 179.5, 'TQS': 0.513, 'WASSA': 3.113, 'Stylometric': 0.070},
+    'Llama 4':     {'PPL': 229.4, 'TQS': 0.582, 'WASSA': 3.280, 'Stylometric': 0.052},
 }
 
 # Human means by model
@@ -179,7 +179,7 @@ def minmax(val, vmin, vmax):
 
 radar_data = {}
 for m in MODEL_ORDER:
-    mk = {'GPT-4':'gpt4','Gemini 1.5 Pro':'gemini','Llama 3 8B':'llama3'}[m]
+    mk = {'GPT-5.5':'gpt4','Gemini 3.1 Pro':'gemini','Llama 4':'llama3'}[m]
     emp_h = human_means.loc[m, 'empatia']
     tom_h = human_means.loc[m, 'adequacao_de_tom']
     con_h = human_means.loc[m, 'consistencia_de_marca']
@@ -254,12 +254,12 @@ human_grouped = human_df.groupby(['model_label', 'persona']).agg(
 
 # Auto metrics by model×persona (from analysis doc)
 auto_persona = {
-    ('GPT-4', 'persona_1'):       {'WASSA': 3.38, 'TQS': 0.567, 'Stylometric': 0.063, 'PPL_inv': 1/109.1},
-    ('GPT-4', 'persona_2'):       {'WASSA': 3.34, 'TQS': 0.521, 'Stylometric': 0.059, 'PPL_inv': 1/127.4},
-    ('Gemini 1.5 Pro', 'persona_1'): {'WASSA': 3.14, 'TQS': 0.538, 'Stylometric': 0.072, 'PPL_inv': 1/150.3},
-    ('Gemini 1.5 Pro', 'persona_2'): {'WASSA': 3.09, 'TQS': 0.489, 'Stylometric': 0.068, 'PPL_inv': 1/208.8},
-    ('Llama 3 8B', 'persona_1'):  {'WASSA': 3.31, 'TQS': 0.608, 'Stylometric': 0.054, 'PPL_inv': 1/196.2},
-    ('Llama 3 8B', 'persona_2'):  {'WASSA': 3.25, 'TQS': 0.556, 'Stylometric': 0.050, 'PPL_inv': 1/262.5},
+    ('GPT-5.5', 'persona_1'):       {'WASSA': 3.38, 'TQS': 0.567, 'Stylometric': 0.063, 'PPL_inv': 1/109.1},
+    ('GPT-5.5', 'persona_2'):       {'WASSA': 3.34, 'TQS': 0.521, 'Stylometric': 0.059, 'PPL_inv': 1/127.4},
+    ('Gemini 3.1 Pro', 'persona_1'): {'WASSA': 3.14, 'TQS': 0.538, 'Stylometric': 0.072, 'PPL_inv': 1/150.3},
+    ('Gemini 3.1 Pro', 'persona_2'): {'WASSA': 3.09, 'TQS': 0.489, 'Stylometric': 0.068, 'PPL_inv': 1/208.8},
+    ('Llama 4', 'persona_1'):  {'WASSA': 3.31, 'TQS': 0.608, 'Stylometric': 0.054, 'PPL_inv': 1/196.2},
+    ('Llama 4', 'persona_2'):  {'WASSA': 3.25, 'TQS': 0.556, 'Stylometric': 0.050, 'PPL_inv': 1/262.5},
 }
 
 persona_markers = {'persona_1': 's', 'persona_2': 'o'}
@@ -318,7 +318,7 @@ for idx, (dim, title) in enumerate(zip(dims, dim_titles)):
     ax = axes[idx]
     box_data = [human_item_means[human_item_means['model_label']==m][dim].values for m in MODEL_ORDER]
     
-    bp = ax.boxplot(box_data, labels=['GPT-4', 'Gemini\n1.5 Pro', 'Llama 3\n8B'],
+    bp = ax.boxplot(box_data, labels=['GPT-5.5', 'Gemini\n3.1 Pro', 'Llama 4'],
                     patch_artist=True, widths=0.6,
                     medianprops=dict(color='black', linewidth=2),
                     whiskerprops=dict(linewidth=1.2),
@@ -388,7 +388,7 @@ add_box(ax, 7.5, 6.2, 2.5, 1, 'Geração de Respostas\n3 LLMs × 8 cenários\n= 
         color='#E8F4FD', border='#2E86AB', fontsize=8, bold=True)
 
 # LLM boxes
-for i, (model, color) in enumerate([('GPT-4', '#2E86AB'), ('Gemini 1.5\nPro', '#A23B72'), ('Llama 3\n8B', '#F18F01')]):
+for i, (model, color) in enumerate([('GPT-5.5', '#2E86AB'), ('Gemini 3.1\nPro', '#A23B72'), ('Llama 4', '#F18F01')]):
     add_box(ax, 10.5, 6.8 - i*0.7, 1.8, 0.55, model, color=color, border=color, fontsize=8, bold=True)
     ax.text(10.5 + 0.9, 6.8 - i*0.7 + 0.275, '', fontsize=8, ha='center', va='center', color='white', fontweight='bold')
     # Make text white for colored boxes

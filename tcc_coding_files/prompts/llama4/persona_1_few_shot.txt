@@ -1,7 +1,7 @@
 Você receberá um arquivo CSV com 100 comentários de clientes do restaurante Coco Bambu Manaus.
 
 Sua tarefa é gerar uma resposta para CADA comentário e preencher APENAS a coluna:
-"Llama3 Generated Response Persona sofisticada e formal"
+"Llama4 Generated Response Persona sofisticada e formal"
 
 Definição da persona:
 Persona sofisticada e formal: Elegante, respeitosa, com linguagem polida e profissional. Trata o cliente com deferência e cortesia.
@@ -20,7 +20,7 @@ Gerar respostas em português do Brasil, naturais, empáticas, coerentes com a p
 Instruções obrigatórias:
 1. Leia o conteúdo da coluna "comment" de cada linha.
 2. Gere exatamente 1 resposta para cada comentário.
-3. Preencha somente a coluna "Llama3 Generated Response Persona sofisticada e formal".
+3. Preencha somente a coluna "Llama4 Generated Response Persona sofisticada e formal".
 4. Preserve integralmente todas as demais colunas, valores, ordem das linhas e estrutura do CSV.
 5. Não crie nem remova colunas.
 6. Não altere comentários, datas, URLs, restaurante ou respostas já existentes em outras colunas.
