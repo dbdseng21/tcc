@@ -479,7 +479,7 @@ class ToneCalPTBRConfig:
     comment_col: str = "comment"
     response_col: str = "response"
     persona_col: str = "persona"
-    target_col: str = "human_tone_likert"
+    target_col: str = "tone_likert"
     id_col: Optional[str] = None
 
 
@@ -691,7 +691,7 @@ def build_training_dataframe(
     response_col: str = "response",
     persona_col: str = "persona",
     human_score_cols: Optional[Sequence[str]] = None,
-    target_col: str = "human_tone_likert",
+    target_col: str = "tone_likert",
 ) -> pd.DataFrame:
     out = df.copy()
     if human_score_cols:
@@ -717,7 +717,7 @@ def run_training_pipeline(
     comment_col: str = "comment",
     response_col: str = "response",
     persona_col: str = "persona",
-    target_col: str = "human_tone_likert",
+    target_col: str = "tone_likert",
     human_score_cols: Optional[Sequence[str]] = None,
 ) -> Dict[str, Any]:
     df = pd.read_csv(train_csv_path)
@@ -777,7 +777,7 @@ if __name__ == "__main__":
             "Pedimos desculpas pela experiência. Lamentamos o ocorrido e queremos resolver isso da melhor forma. Por favor, fale conosco.",
         ],
         "persona": ["persona_2", "persona_1", "persona_1", "persona_2", "persona_1"],
-        "human_tone_likert": [5, 4, 4, 4, 5],
+        "tone_likert": [5, 4, 4, 4, 5],
     })
 
     tc = ToneCalPTBR()

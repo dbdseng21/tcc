@@ -89,7 +89,7 @@ A partir da raiz `tcc_coding_files/`:
 
 ```bash
 # Adequação de tom — ToneCal PT-BR
-python tcc2/algorithms/adequacao_de_tom/run_tonecal_pipeline.py
+python tcc2/algorithms/adequacao_de_tom/tonecal_ptbr.py
 
 # Consistência de marca — Writeprints + PCA + cosine
 python tcc2/algorithms/consistência_de_marca/run_stylometric_similarity_project.py \
